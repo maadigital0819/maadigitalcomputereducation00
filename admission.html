@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Admission & Enrollment | Maa Digital</title>
+    <meta name="description" content="Complete your course enrollment at Maa Digital. Fast, secure, and instant admission.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/admission.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Maa Digital Logo">
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="admission.html" class="active">Admission</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <!-- Admission Hero -->
+        <section class="admission-hero">
+            <div class="hero-animated-bg">
+                <div class="animated-blob blob-1"></div>
+                <div class="animated-blob blob-2"></div>
+                <div class="animated-blob blob-3"></div>
+            </div>
+            
+            <div class="container">
+                <div class="hero-content-admission">
+                    <h1 class="hero-title-admission">
+                        Start Your <span class="gradient-text">Learning Journey</span>
+                    </h1>
+                    <p class="hero-subtitle-admission">
+                        Complete your enrollment and begin mastering in-demand skills today
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admission Form Section -->
+        <section class="admission-section">
+            <div class="container">
+                <div class="admission-wrapper">
+                    <!-- Left: Course Details -->
+                    <div class="admission-left">
+                        <!-- Course Selection (when no course selected) -->
+                        <div class="course-selector-card" id="courseSelectorCard" style="display: none;">
+                            <h3>Select a Course</h3>
+                            <div class="form-group">
+                                <label for="courseSelect">Choose Your Course *</label>
+                                <select id="courseSelect" class="course-select" required>
+                                    <option value="">-- Select a course --</option>
+                                </select>
+                                <span class="error-message" id="courseSelectError"></span>
+                            </div>
+                            <button type="button" class="select-course-btn" onclick="selectCourseFromDropdown()">
+                                Select Course
+                            </button>
+                        </div>
+
+                        <!-- Selected Course Card (when course is selected) -->
+                        <div class="selected-course-card" id="selectedCourseCard">
+                            <h3>Selected Course</h3>
+                            <div class="course-details-admission" id="courseDetailsAdmission">
+                                <div class="loading-placeholder">Loading course details...</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Enrollment Form -->
+                    <div class="admission-right">
+                        <div class="enrollment-form-container">
+                            <h2>Complete Your Enrollment</h2>
+                            <form id="admissionForm" class="admission-form">
+                                <!-- Personal Information -->
+                                <fieldset class="form-section">
+                                    <legend>Personal Information</legend>
+                                    
+                                    <div class="form-group">
+                                        <label for="fullName">Full Name *</label>
+                                        <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                                        <span class="error-message" id="fullNameError"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="email">Email Address *</label>
+                                        <input type="email" id="email" name="email" required placeholder="Enter your email">
+                                        <span class="error-message" id="emailError"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="phone">Phone Number *</label>
+                                        <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+                                        <span class="error-message" id="phoneError"></span>
+                                    </div>
+                                </fieldset>
+
+                                <!-- Education Information -->
+                                <fieldset class="form-section">
+                                    <legend>Education Information</legend>
+                                    
+                                    <div class="form-group">
+                                        <label for="qualification">Qualification *</label>
+                                        <select id="qualification" name="qualification" required>
+                                            <option value="">Select your qualification</option>
+                                            <option value="10th">10th Pass</option>
+                                            <option value="12th">12th Pass</option>
+                                            <option value="diploma">Diploma</option>
+                                            <option value="bachelor">Bachelor's Degree</option>
+                                            <option value="master">Master's Degree</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                        <span class="error-message" id="qualificationError"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="experience">Years of Experience *</label>
+                                        <select id="experience" name="experience" required>
+                                            <option value="">Select experience level</option>
+                                            <option value="0">Fresher (0 years)</option>
+                                            <option value="1">1 Year</option>
+                                            <option value="2">2 Years</option>
+                                            <option value="3">3 Years</option>
+                                            <option value="5">5+ Years</option>
+                                        </select>
+                                        <span class="error-message" id="experienceError"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="motivation">Why do you want to take this course? *</label>
+                                        <textarea id="motivation" name="motivation" required placeholder="Share your goals and motivation..." rows="4"></textarea>
+                                        <span class="error-message" id="motivationError"></span>
+                                    </div>
+                                </fieldset>
+
+                                <!-- Course Information (Hidden) -->
+                                <input type="hidden" id="courseId" name="courseId">
+                                <input type="hidden" id="courseName" name="courseName">
+
+                                <!-- Agreement -->
+                                <div class="form-group checkbox-group">
+                                    <input type="checkbox" id="agreement" name="agreement" required>
+                                    <label for="agreement" class="checkbox-label">
+                                        I agree to the Terms & Conditions and Privacy Policy *
+                                    </label>
+                                    <span class="error-message" id="agreementError"></span>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <button type="submit" class="enroll-submit-btn">
+                                    <span>Complete Enrollment</span>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 12l5 5L19 7"></path>
+                                    </svg>
+                                </button>
+
+                                <p class="form-note">📧 Confirmation email will be sent to your email address</p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Modal -->
+        <div class="success-modal" id="successModal" style="display: none;">
+            <div class="modal-content-success">
+                <div class="success-icon">✓</div>
+                <h2>Enrollment Successful!</h2>
+                <p id="successMessage">You have been enrolled in the course.</p>
+                <div class="success-details" id="successDetails"></div>
+                <button class="modal-btn" onclick="window.location.href='courses.html'">Back to Courses</button>
+            </div>
+        </div>
+
+        <!-- Error Modal -->
+        <div class="error-modal" id="errorModal" style="display: none;">
+            <div class="modal-content-error">
+                <div class="error-icon">⚠</div>
+                <h2>Enrollment Failed</h2>
+                <p id="errorMessage">Something went wrong. Please try again.</p>
+                <button class="modal-btn" onclick="closeErrorModal()">Close</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="admission.html">Admission</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>123 Learning Lane<br>Tech City, TX 75001</p>
+                    <p>Email: <a href="mailto:maadigitalseva111@gmail.com">maadigitalseva111@gmail.com</a></p>
+                    <p>Phone: <a href="tel:+91 02678299140">(+91) 02678299140</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <ul class="social-icons">
+                        <li>
+                            <a href="#" aria-label="Facebook">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.333v21.334C0 23.403.597 24 1.325 24H12.82v-9.294H9.692V11.01h3.128V8.413c0-3.1 1.894-4.788 4.66-4.788 1.325 0 2.464.099 2.795.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.312h3.587l-.467 3.696h-3.12V24h6.116c.728 0 1.325-.597 1.325-1.333V1.333C24 .597 23.403 0 22.675 0z"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="WhatsApp">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M24 4.557a9.83 9.83 0 01-2.828.775 4.932 4.932 0 002.165-2.724c-.951.564-2.005.974-3.127 1.195a4.916 4.916 0 00-8.384 4.482C7.691 8.094 4.066 6.13 1.64 3.161a4.822 4.822 0 00-.666 2.475c0 1.708.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.062a4.917 4.917 0 003.946 4.827 4.902 4.902 0 01-2.224.084 4.918 4.918 0 004.588 3.417A9.867 9.867 0 010 19.54a13.94 13.94 0 007.548 2.212c9.058 0 14.01-7.496 14.01-13.986 0-.213-.005-.425-.014-.637A10.025 10.025 0 0024 4.557z"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="LinkedIn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.025-3.036-1.85-3.036-1.851 0-2.135 1.445-2.135 2.938v5.667h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.368-1.85 3.599 0 4.267 2.368 4.267 5.452v6.289zM5.337 7.433c-1.144 0-2.069-.925-2.069-2.069 0-1.144.925-2.069 2.069-2.069s2.069.925 2.069 2.069c0 1.144-.925 2.069-2.069 2.069zm1.777 13.019H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.229.792 24 1.771 24h20.451C23.208 24 24 23.229 24 22.277V1.723C24 .771 23.208 0 22.225 0z"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p class="copyright">© <span id="year"></span> Maa Digital Computer Education. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script src="js/mobile-optimizer.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/courses-modern.js"></script>
+    <script src="js/admission.js"></script>
+</body>
+</html>

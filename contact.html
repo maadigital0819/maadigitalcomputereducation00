@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us – Maa Digital Computer Education</title>
+    <meta name="description" content="Get in touch with Maa Digital Computer Education. Fill out the contact form or use the institute's phone, email, and address.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Maa Digital Computer Education Logo">
+            </a>
+            <nav class="main-nav" aria-label="Primary Navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="admission.html">Admission</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html" class="active">Contact Us</a></li>
+                </ul>
+            </nav>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero hero--contact">
+        <div class="container hero-content">
+            <h1>Contact Us</h1>
+            <p class="hero-subtitle">We’re here to help you start your journey in computer education.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container main-content">
+        <section class="contact-details">
+            <h2>Our Office</h2>
+            <address>
+                <p><strong>Maa Digital Computer Education Institute</strong></p>
+                <p>123 Knowledge Avenue, Tech City, State 45678</p>
+                <p>Phone: <a href="tel:+1234567890">+1 (234) 567‑890</a></p>
+                <p>Email: <a href="mailto:info@maadigital.edu">info@maadigital.edu</a></p>
+                <p>Hours: Mon – Fri, 9:00 AM – 6:00 PM</p>
+            </address>
+        </section>
+
+        <section class="contact-form-section">
+            <h2>Send Us a Message</h2>
+            <form id="contactForm" action="contact.php" method="POST" novalidate>
+                <div class="form-grid">
+                    <div class="form-group" data-animation="fade-in-up">
+                        <label for="name">Full Name<span aria-hidden="true">*</span></label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required minlength="2">
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+                    <div class="form-group" data-animation="fade-in-up">
+                        <label for="email">Email<span aria-hidden="true">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+                    <div class="form-group full-width" data-animation="fade-in-up">
+                        <label for="subject">Subject<span aria-hidden="true">*</span></label>
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required minlength="4">
+                        <span class="error-message" id="subjectError"></span>
+                    </div>
+                    <div class="form-group full-width" data-animation="fade-in-up">
+                        <label for="message">Message<span aria-hidden="true">*</span></label>
+                        <textarea id="message" name="message" rows="6" placeholder="Your message…" required minlength="10"></textarea>
+                        <span class="error-message" id="messageError"></span>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+                <div id="formFeedback" class="form-feedback" aria-live="polite"></div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; <span id="currentYear"></span> Maa Digital Computer Education. All rights reserved.</p>
+            <nav class="footer-nav" aria-label="Footer Navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="js/validation.js" defer></script>
+    <script type="module" src="js/main.js" defer></script>
+    <script>
+        // Update footer year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+    <script src="js/mobile-optimizer.js"></script>
+</body>
+</html>
