@@ -1,0 +1,627 @@
+/* ================================================================
+   RESPONSIVE DESIGN - MOBILE FIRST OPTIMIZATION
+   Mobile, Tablet, Desktop Support
+   ================================================================ */
+
+/* ROOT RESPONSIVE VARIABLES */
+:root {
+  /* Mobile Font Sizes */
+  --fs-mobile-h1: 1.75rem;
+  --fs-mobile-h2: 1.35rem;
+  --fs-mobile-h3: 1.1rem;
+  --fs-mobile-body: 0.95rem;
+  --fs-mobile-small: 0.85rem;
+  
+  /* Tablet Font Sizes */
+  --fs-tablet-h1: 2.2rem;
+  --fs-tablet-h2: 1.65rem;
+  --fs-tablet-h3: 1.3rem;
+  --fs-tablet-body: 1rem;
+  
+  /* Desktop Font Sizes */
+  --fs-desktop-h1: 3rem;
+  --fs-desktop-h2: 2.2rem;
+  --fs-desktop-h3: 1.5rem;
+  --fs-desktop-body: 1.05rem;
+  
+  /* Mobile Spacing */
+  --spacing-mobile-sm: 0.5rem;
+  --spacing-mobile-md: 1rem;
+  --spacing-mobile-lg: 1.5rem;
+  --spacing-mobile-xl: 2rem;
+  
+  /* Tablet Spacing */
+  --spacing-tablet-lg: 2.5rem;
+  --spacing-tablet-xl: 3rem;
+  
+  /* Desktop Spacing */
+  --spacing-desktop-xl: 4rem;
+  
+  /* Touch Target Size */
+  --touch-target: 48px;
+}
+
+/* ================================================================
+   MOBILE FIRST (DEFAULT - 320px to 479px)
+   ================================================================ */
+
+/* Body & Text */
+body {
+  font-size: var(--fs-mobile-body);
+  line-height: 1.6;
+}
+
+h1, .hero-title {
+  font-size: var(--fs-mobile-h1);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h2, .section-title {
+  font-size: var(--fs-mobile-h2);
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: var(--fs-mobile-h3);
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+/* Sections */
+section {
+  padding: var(--spacing-mobile-lg) var(--spacing-mobile-md);
+}
+
+/* Buttons - Touch Friendly */
+button,
+.btn,
+input[type="button"],
+input[type="submit"],
+.enroll-btn-modern,
+.select-course-btn,
+.enroll-submit-btn,
+.cta-btn,
+.course-expand-btn {
+  min-height: var(--touch-target);
+  min-width: var(--touch-target);
+  padding: 0.75rem 1.25rem;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  touch-action: manipulation;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Forms */
+input,
+textarea,
+select {
+  font-size: 16px; /* Prevents zoom on iOS */
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 8px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Navigation */
+.main-nav {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100vh;
+  background: white;
+  transition: left 0.3s ease;
+  z-index: 999;
+  padding-top: 80px;
+}
+
+.main-nav.open {
+  left: 0;
+}
+
+.main-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.main-nav li {
+  width: 100%;
+}
+
+.main-nav a {
+  display: block;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle {
+  min-height: var(--touch-target);
+  min-width: var(--touch-target);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+/* Grid Layouts */
+.gallery-grid,
+.features-grid,
+.stats-grid,
+.testimonials-grid,
+.courses-grid-modern {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Course Card */
+.course-card-modern {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.course-card-modern img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.course-card-header {
+  padding: 1rem;
+}
+
+.course-card-footer {
+  padding: 1rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.course-card-footer button {
+  flex: 1;
+  min-width: 120px;
+}
+
+/* Forms */
+.admission-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 300px;
+  padding: 2rem 1rem;
+}
+
+.hero-title {
+  word-break: break-word;
+}
+
+/* Footer */
+.site-footer {
+  padding: 1.5rem;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.footer-col h4 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-col a {
+  font-size: 0.9rem;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+/* ================================================================
+   TABLET (480px to 768px)
+   ================================================================ */
+
+@media (min-width: 480px) {
+  :root {
+    font-size: 16px;
+  }
+  
+  body {
+    font-size: var(--fs-mobile-body);
+  }
+  
+  h1, .hero-title {
+    font-size: var(--fs-tablet-h1);
+  }
+  
+  h2, .section-title {
+    font-size: var(--fs-tablet-h2);
+  }
+  
+  h3 {
+    font-size: var(--fs-tablet-h3);
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+    max-width: 100%;
+  }
+  
+  section {
+    padding: var(--spacing-mobile-lg) var(--spacing-tablet-lg);
+  }
+  
+  .main-nav {
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    padding: 0;
+  }
+  
+  .main-nav ul {
+    flex-direction: row;
+    gap: 0;
+  }
+  
+  .main-nav li {
+    width: auto;
+  }
+  
+  .main-nav a {
+    border-bottom: none;
+    padding: 0.75rem 1rem;
+  }
+  
+  .nav-toggle {
+    display: none;
+  }
+  
+  .gallery-grid,
+  .features-grid,
+  .stats-grid,
+  .courses-grid-modern {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .admission-wrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero {
+    min-height: 400px;
+    padding: 3rem 1.5rem;
+  }
+  
+  .footer-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ================================================================
+   SMALL TABLET / LANDSCAPE (769px to 1024px)
+   ================================================================ */
+
+@media (min-width: 769px) {
+  h1, .hero-title {
+    font-size: var(--fs-tablet-h1);
+  }
+  
+  h2, .section-title {
+    font-size: var(--fs-tablet-h2);
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+  
+  .container {
+    padding: 0 2rem;
+    max-width: 100%;
+  }
+  
+  section {
+    padding: var(--spacing-tablet-xl) var(--spacing-tablet-lg);
+  }
+  
+  .gallery-grid,
+  .features-grid,
+  .stats-grid,
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .courses-grid-modern {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .admission-wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .hero {
+    min-height: 450px;
+    padding: 4rem 2rem;
+  }
+  
+  .footer-columns {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* ================================================================
+   DESKTOP (1025px+)
+   ================================================================ */
+
+@media (min-width: 1025px) {
+  h1, .hero-title {
+    font-size: var(--fs-desktop-h1);
+  }
+  
+  h2, .section-title {
+    font-size: var(--fs-desktop-h2);
+  }
+  
+  h3 {
+    font-size: var(--fs-desktop-h3);
+  }
+  
+  body {
+    font-size: var(--fs-desktop-body);
+  }
+  
+  .container {
+    padding: 0 2rem;
+    max-width: 1200px;
+  }
+  
+  section {
+    padding: var(--spacing-desktop-xl) 2rem;
+  }
+  
+  .gallery-grid,
+  .features-grid,
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .courses-grid-modern {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .admission-wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  
+  .hero {
+    min-height: 500px;
+    padding: 5rem 2rem;
+  }
+  
+  .footer-columns {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+}
+
+/* ================================================================
+   EXTRA LARGE DESKTOP (1400px+)
+   ================================================================ */
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+  
+  .gallery-grid,
+  .features-grid,
+  .testimonials-grid {
+    gap: 2.5rem;
+  }
+  
+  .courses-grid-modern {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+/* ================================================================
+   PRINT STYLES
+   ================================================================ */
+
+@media print {
+  .nav-toggle,
+  .main-nav,
+  .site-footer,
+  button,
+  input {
+    display: none;
+  }
+  
+  body {
+    font-size: 12pt;
+  }
+  
+  section {
+    page-break-inside: avoid;
+  }
+}
+
+/* ================================================================
+   ACCESSIBILITY - LANDSCAPE MODE FIX
+   ================================================================ */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  section {
+    padding: 1rem;
+  }
+  
+  .hero {
+    min-height: 300px;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ================================================================
+   HIGH DPI SCREENS (RETINA)
+   ================================================================ */
+
+@media (min-resolution: 192dpi) {
+  img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* ================================================================
+   REDUCED MOTION (ACCESSIBILITY)
+   ================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ================================================================
+   DARK MODE SUPPORT
+   ================================================================ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1a1a1a;
+    --color-text: #e0e0e0;
+    --color-bg-dark: #333;
+  }
+  
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+  }
+  
+  .main-nav {
+    background: #222;
+  }
+  
+  .main-nav a {
+    color: var(--color-text);
+    border-color: #444;
+  }
+}
+
+/* Additional Button Alignment Fixes */
+@media (min-width: 480px) and (max-width: 768px) {
+  .cta-btn,
+  .cta-btn-modern,
+  .enroll-btn-modern,
+  .enroll-submit-btn {
+    width: auto;
+    padding: 0.85rem 2rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .cta-btn,
+  .cta-btn-modern,
+  .enroll-btn-modern {
+    width: auto;
+    padding: 1rem 2.5rem;
+  }
+}
+
+/* Mobile Button Placement */
+@media (max-width: 480px) {
+  .cta-btn,
+  .btn,
+  .enroll-btn-modern {
+    width: 100%;
+    max-width: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cta-buttons,
+  .cta-buttons-modern {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .cta-btn,
+  .cta-btn-modern {
+    width: 100%;
+    max-width: 280px;
+  }
+}
